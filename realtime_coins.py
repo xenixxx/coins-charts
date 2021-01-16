@@ -9,11 +9,11 @@ from pandas import DataFrame
 
 minutes_processed = {}
 minute_candlesticks = []
-current_tick = None
-previous_tick = None
+current_tick_btc = None
+previous_tick_btc = None
 
 socket = 'wss://ws-feed.pro.coinbase.com'
-
+fout = 'coins_data.csv'
 
 def on_open(ws):
     print("Connection is opened")
@@ -23,7 +23,7 @@ def on_open(ws):
             {
                 "name": "ticker",
                 "product_ids": [
-                    "BTC-USD"
+                    "BTC-USD", "ETH-USD"
                 ]
             }
 
@@ -34,14 +34,17 @@ def on_open(ws):
 
 
 def on_message(ws, message):
-    global current_tick, previous_tick
+    global current_tick_btc, previous_tick_btc
+    global current_tick_eth, previous_tick_eth
 
-    previous_tick = current_tick
-    current_tick = json.loads(message)
+    previous_tick_btc = current_tick_btc
+    current_tick_btc = json.loads(message)
 
     # print(current_tick)
     print("=== Received Tick ===")
-    print(f"{current_tick['price']} @ {current_tick['time']}")
+
+    print(message)
+    print(f"{current_tick['product_ids']} @ {current_tick['price']} @ {current_tick['time']}")
 
     tick_datetime_object = dateutil.parser.parse(current_tick['time'])
     timenow = tick_datetime_object + timedelta(hours=1)
@@ -66,7 +69,7 @@ def on_message(ws, message):
         df: DataFrame = pd.DataFrame(minute_candlesticks[:-1])
         # with open('bitcoin_data_tut.csv', 'a') as f:
         # df.to_csv(f, header=f.tell() == 0)
-        df.to_csv('bitcoin_data_tut.csv')
+        df.to_csv(fout)
 
     if len(minute_candlesticks) > 0:
         current_candlestick = minute_candlesticks[-1]

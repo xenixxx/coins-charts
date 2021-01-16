@@ -23,7 +23,7 @@ def on_open(ws):
             {
                 "name": "ticker",
                 "product_ids": [
-                    "BTC-USD"
+                    "ETH-USD"
                 ]
             }
 
@@ -66,7 +66,7 @@ def on_message(ws, message):
         df: DataFrame = pd.DataFrame(minute_candlesticks[:-1])
         # with open('bitcoin_data_tut.csv', 'a') as f:
         # df.to_csv(f, header=f.tell() == 0)
-        df.to_csv('bitcoin_data_tut.csv')
+        df.to_csv('eth_data_real.csv')
 
     if len(minute_candlesticks) > 0:
         current_candlestick = minute_candlesticks[-1]
