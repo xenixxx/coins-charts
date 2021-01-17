@@ -13,7 +13,7 @@ current_tick_btc = None
 previous_tick_btc = None
 
 socket = 'wss://ws-feed.pro.coinbase.com'
-fout = 'coins_data.csv'
+fout = '/tmp/coins_data.csv'
 
 def on_open(ws):
     print("Connection is opened")

@@ -11,8 +11,8 @@ from datetime import date, datetime
 
 # def genPlot():
 #    threading.Timer(10.0, genPlot).start()
-btccsv = '/home/user/PycharmProjects/coins-charts/bitcoin_data_tut.csv'
-ethcsv = '/home/user/PycharmProjects/coins-charts/eth_data_real.csv'
+btccsv = '/tmp/bitcoin_data_tut.csv'
+ethcsv = '/tmp/eth_data_real.csv'
 ftail = 60
 
 # /home/user/PycharmProjects/coins-charts/
