@@ -1,3 +1,3 @@
-# Realtime-Bitcoin plot and 
-In this tutorial, I will show you how to stream realtime Bitcoin data in USD with Websocket and Python programming. With the realtime prices, we are going to animate a 1 minute candlestick chart.
+# Realtime-Bitcoin ploting
+Etream realtime Bitcoin data with Websocket and Python. With the realtime prices, we are going to animate a 1 minute candlestick chart and use in machine learnig framework.
 

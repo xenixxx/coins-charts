@@ -14,7 +14,6 @@ previous_tick = None
 
 socket = 'wss://ws-feed.pro.coinbase.com'
 
-
 def on_open(ws):
     print("Connection is opened")
     subscribe_msg = {
