@@ -5,7 +5,6 @@ import matplotlib.animation as animation
 import datetime
 from datetime import date, datetime
 
-
 # fig = mpf.figure(style="checkers", figsize=(6, 7))
 # ax1 = fig.add_subplot(1, 1, 1)
 
