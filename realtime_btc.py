@@ -4,7 +4,6 @@ import pandas as pd
 import dateutil.parser
 import datetime
 from datetime import date, datetime, timedelta
-
 from pandas import DataFrame
 
 minutes_processed = {}
