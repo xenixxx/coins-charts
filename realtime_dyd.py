@@ -12,8 +12,8 @@ minute_candlesticks = []
 current_tick = None
 previous_tick = None
 
-#socket = 'wss://ws-feed.pro.coinbase.com'
-socket = 'wss://ws-feed.exchange.coinbase.com'
+socket = 'wss://ws-feed.pro.coinbase.com'
+
 
 def on_open(ws):
     print("Connection is opened")
@@ -64,11 +64,9 @@ def on_message(ws, message):
         })
 
         df: DataFrame = pd.DataFrame(minute_candlesticks[:-1])
-        #with open('/tmp/bitcoin_data_tut.csv', 'a') as f:
-         #df.to_csv(f, header=f.tell() == 0)
+        # with open('bitcoin_data_tut.csv', 'a') as f:
+        # df.to_csv(f, header=f.tell() == 0)
         df.to_csv('/tmp/bitcoin_data_tut.csv')
-	     #df.to_csv('/tmp/bitcoin_data_tut.csv', mode='a', index=False, header=False)
-	     #df.to_csv('/tmp/bitcoin_data_tut.csv', mode='a')
 
     if len(minute_candlesticks) > 0:
         current_candlestick = minute_candlesticks[-1]

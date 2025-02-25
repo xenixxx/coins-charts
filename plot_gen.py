@@ -24,7 +24,6 @@ mpf.plot(idf, type='candle', style='checkers', mav=(3, 6, 9), ylabel='BTC / USD'
 saveTmp = dict(fname='/tmp/btc_chart.png', dpi=60, pad_inches=0.25, transparent=True)
 mpf.plot(idf.tail(ftail), type='candle', style='mike', ylabel='BTC / USD', savefig=saveTmp)
 
-
 idf = pd.read_csv(btccsv)
 idf['minute'] = pd.to_datetime(idf['minute'], format="%m/%d/%Y %H:%M")
 idf.set_index('minute', inplace=True)
@@ -32,16 +31,16 @@ saveTmp = dict(fname='/tmp/btc_chart_day.png', dpi=60, pad_inches=0.25, transpar
 mpf.plot(idf, type='line', style='mike', mav=(3, 6, 9), ylabel='BTC / USD', savefig=saveTmp)
 
 # GENERATE ETH
-idf = pd.read_csv(ethcsv)
-idf['minute'] = pd.to_datetime(idf['minute'], format="%m/%d/%Y %H:%M")
-idf.set_index('minute', inplace=True)
-saveTmp = dict(fname='/tmp/eth_chart.png', dpi=60, pad_inches=0.25, transparent=True)
-mpf.plot(idf.tail(ftail), type='candle', style='mike', ylabel='ETH / USD', savefig=saveTmp)
+# idf = pd.read_csv(ethcsv)
+# idf['minute'] = pd.to_datetime(idf['minute'], format="%m/%d/%Y %H:%M")
+# idf.set_index('minute', inplace=True)
+# saveTmp = dict(fname='/tmp/eth_chart.png', dpi=60, pad_inches=0.25, transparent=True)
+# mpf.plot(idf.tail(ftail), type='candle', style='mike', ylabel='ETH / USD', savefig=saveTmp)
 
-idf = pd.read_csv(ethcsv)
-idf['minute'] = pd.to_datetime(idf['minute'], format="%m/%d/%Y %H:%M")
-idf.set_index('minute', inplace=True)
-saveTmp = dict(fname='/tmp/eth_chart_day.png', dpi=60, pad_inches=0.25, transparent=True)
-mpf.plot(idf, type='line', style='mike', mav=(3, 6, 9), ylabel='ETH / USD', savefig=saveTmp)
+# idf = pd.read_csv(ethcsv)
+# idf['minute'] = pd.to_datetime(idf['minute'], format="%m/%d/%Y %H:%M")
+# idf.set_index('minute', inplace=True)
+# saveTmp = dict(fname='/tmp/eth_chart_day.png', dpi=60, pad_inches=0.25, transparent=True)
+# mpf.plot(idf, type='line', style='mike', mav=(3, 6, 9), ylabel='ETH / USD', savefig=saveTmp)
 
 # genPlot()

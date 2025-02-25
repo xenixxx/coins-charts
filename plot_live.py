@@ -15,6 +15,7 @@ def animate(ival):
     idf.set_index('minute', inplace=True)
 
     ax1.clear
+    mpf.figure(facecolor='black')
     mpf.plot(idf, ax=ax1, type='candle', style='checkers', mav=(3, 6, 9), ylabel='Price US$')
 
 
