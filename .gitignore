@@ -1,5 +1,6 @@
 # Project exclude paths
 /.venv
 /.vscode
+/.idea
 bitcoin_data_tut.csv
 bitcoin_data_tut.csv
